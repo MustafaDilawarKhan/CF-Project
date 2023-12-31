@@ -1,0 +1,162 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	width: 100%;
+	height: 100vh;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #30302a;
+}
+
+.card {
+	width: 250px;
+	height: 455px;
+	margin-top: 7px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 36px;
+	perspective: 2500px;
+	cursor: pointer;
+	border-radius: 30px;
+	margin: 32px;
+}
+
+.cover-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.wrapper {
+	transition: all 0.5s;
+	position: absolute;
+	width: 100%;
+	z-index: -1;
+	background: #000;
+	border-radius: 30px;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.wrapper img {
+	border-radius: 30px;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.card:hover .wrapper {
+	transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+	box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+	-webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+	z-index: 1; /*Add this line to bring .wrapper to the front*/
+}
+
+.wrapper::before,
+.wrapper::after {
+	content: "";
+	opacity: 0;
+	width: 100%;
+	height: 80px;
+	transition: all 0.5s;
+	border-radius: 30px;
+	position: absolute;
+	left: 0;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+.wrapper::before {
+	top: 0;
+	height: 100%;
+	background-image: linear-gradient(to top,transparent 46%,rgba(12, 13, 19, 0.5) 68%,rgba(12, 13, 19) 97%);
+}
+
+.wrapper::after {
+	bottom: 0;
+	opacity: 1;
+	background-image: linear-gradient(to bottom,transparent 46%,rgba(12, 13, 19, 0.5) 68%,rgba(12, 13, 19) 97%);
+}
+
+.card:hover .wrapper::before,
+.wrapper::after {
+	opacity: 1;
+}
+
+.card:hover .wrapper::after {
+	height: 120px;
+}
+
+.logo {
+	width: 100%;
+	transition: transform 0.5s;
+	position: absolute;
+    bottom: 10px;
+	opacity: 0;
+}
+
+.card:hover .logo {
+	transform: translate3d(0%, -50px, 100px);
+	opacity: 1;
+	margin: -80px;
+}
+
+.card:hover .cover-image {
+    opacity: 0.3;
+}
+
+.character {
+	width: 100%;
+	opacity: 0;
+	transition: all 0.5s;
+	filter: drop-shadow(2px 2px 2px #000);
+	position: absolute;
+	z-index: -1;
+}
+
+.card:hover .character {
+	opacity: 1;
+	transform: translate3d(5%, -20%, 670px);
+	z-index: 1; /* Add this line to bring .character to the front */
+}
+
+/* Add the following styles for the back button */
+
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+.back-button a {
+    text-decoration: none;
+    color: #acac9c;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+
+.back-button img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+	margin-top: 10px;
+}
+
+button {
+    margin-bottom: 550px; /* Add space from the top */
+    margin-right: -15px;
+	padding: 15px 25px;
+    cursor: pointer;
+	background: linear-gradient(to right, #ccd38c, #30302a); /* Gradient from yellow to black */
+    /* color: white;  Text color */
+    border: none; /* Remove border */
+	border-radius: 30px;
+}
+
+
+
+

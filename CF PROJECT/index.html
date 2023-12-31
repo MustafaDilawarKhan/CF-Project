@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Heroes</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="logo.webp" type="image/webp">
+    
+</head>
+
+<body>
+
+
+    <div class="back-button" onclick="goBack()">
+        <a href="#">
+           <img src="backarrow.png" alt="Back Arrow">
+           <!--<b>Back</b>-->
+        </a>
+     </div>
+         
+
+    <!-- First Card -->
+    <div class="card">
+        <div class="wrapper">
+            <img src="img/king-back.jpg" class="cover-image" />
+        </div>
+        <img src="img/kinglogo.png" class="logo" />
+        <img src="img/king-front.png" class="character" />
+    </div>
+
+    <!-- Second Card -->
+    <div class="card">
+        <div class="wrapper">
+            <img src="img/queenback.jpg" class="cover-image" />
+        </div>
+        <img src="img/queen.png" class="logo" />
+        <img src="img/img2.png" class="character" />
+    </div>
+
+    <div>
+        <button id="colorButton"> </button>
+        
+     </div>
+
+	<!-- Third Card -->
+    <div class="card">
+        <div class="wrapper">
+            <img src="img/wardenback.jpg" class="cover-image" />
+        </div>
+        <img src="img/warden.png" class="logo" />
+        <img src="img/img3.png" class="character" />
+    </div>
+
+	<!-- Fourth Card -->
+    <div class="card">
+        <div class="wrapper">
+            <img src="img/royal.jpg" class="cover-image" />
+        </div>
+        <img src="img/royal.png" class="logo" />
+        <img src="img/img4.png" class="character" />
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+
+
+
+<script src="index.js"></script>
+
+
+</body>
+</html>
